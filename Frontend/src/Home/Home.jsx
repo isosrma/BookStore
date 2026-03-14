@@ -12,6 +12,7 @@ function Home() {
       <Banner />
       <Freebook />
       <Footer />
+    
    </>
   )
 }

@@ -4,10 +4,10 @@ import banner from '../assets/banner.jpg'
 function Banner() {
   return (
     <>
-      <div className="max-w-screen-2xl container mx-auto px-4 sm:px-8 md:px-20 flex flex-col-reverse md:flex-row items-center">
+      <div className="max-w-screen-2xl container mx-auto px-4 sm:px-8 md:px-20 flex flex-col-reverse md:flex-row items-center ">
         
         {/* Text Section */}
-        <div className="w-full md:w-1/2 mt-10 md:mt-32 text-center md:text-left">
+        <div className=" w-full md:w-1/2 mt-10  md:mt-32 text-center md:text-left">
           <div className="space-y-8">
             
             <h1 className="text-2xl sm:text-3xl md:text-4xl font-bold leading-tight">

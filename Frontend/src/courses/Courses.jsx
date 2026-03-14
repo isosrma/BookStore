@@ -7,7 +7,7 @@ function Courses() {
   return (
    <>
    <Navbar />
-<div className='min-h-screen'>
+<div className='dark:bg-slate-500 dark:text-white'>
     <Course />
   </div>
    <Footer />

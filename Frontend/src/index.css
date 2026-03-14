@@ -3,6 +3,8 @@
 @import "tailwindcss";
 @plugin "daisyui";
 
+@custom-variant dark (&:where(.dark, .dark *));
+ 
 
 body {
   font-family: 'Poppins', sans-serif;

@@ -7,8 +7,8 @@ import Courses from './courses/Courses';
 function App() {
   return (
     <>
-
-      <Routes>
+   <div className='dark:bg-slate-500 dark:bg-text-white'>
+       <Routes>
         <Route path="/"
          element={<Home />} />
 
@@ -20,9 +20,9 @@ function App() {
          
           <Route path="/about"
          element={<About />} />
-         
-
       </Routes>
+     </div>
+  
   
     </>
   );
