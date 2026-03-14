@@ -4,14 +4,14 @@ function Cards({item}) {
   console.log(item);
  return (
   <>
-  <div className="card bg-base-92 w-92 h-auto shadow-sm  mt-8 m-auto hover:shadow-red-700 duration-300 transition-shadow hover:scale-105 duration-300 transition-transform">
-  <figure>
+  <div className="card bg-base-92 w-92 h-{400px} mb-7   shadow-sm  mt-8 m-auto hover:shadow-red-700 duration-300 transition-shadow hover:scale-105 duration-300 transition-transform">
+  <figure className='overflow-hidden'>
     <img
       src= {item.image}
       alt={item.name} />  
   </figure>
   <div className="card-body">
-    <h2 className="card-title">
+    <h2 className="card-title ">
       {item.name}
       {item.category === "Free" && (
               <div className="badge badge-secondary">FREE</div>
