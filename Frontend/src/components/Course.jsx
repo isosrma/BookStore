@@ -9,7 +9,9 @@ function Course() {
       <h1 className='text-2xl  md:text-4xl' >We're delighted to have you 
         <span className='text-pink-500'>here!)</span>
       </h1>
-      <p className='mt-12'>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nemo fuga delectus quis placeat, ullam, eius dolores nulla vel earum hic, cum nisi vero quas repellendus laudantium molestias culpa est expedita.
+      <p className='mt-12'> Welcome to <span className="font-semibold text-pink-500">KitabGhar</span>, your personal library in the cloud! 
+          Explore countless books, discover new stories, and enjoy a world of knowledge at your fingertips. 
+          Whether you're here to read, learn, or just wander through pages, we've got something special for you.
       </p>
     <Link to="/">
       <button className='bg-pink-500 cursor-pointer text-white px-4 py-2 rounded-md mt-6 hover:bg-pink-800  duration-300'>Back </button>

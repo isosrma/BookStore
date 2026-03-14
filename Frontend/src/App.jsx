@@ -4,6 +4,7 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Contact from './components/Contact';
 import About from './components/About';
 import Courses from './courses/Courses';
+import Signup from './components/Signup';
 function App() {
   return (
     <>
@@ -20,6 +21,9 @@ function App() {
          
           <Route path="/about"
          element={<About />} />
+
+          <Route path="/signup"
+         element={<Signup />} />
       </Routes>
      </div>
   
