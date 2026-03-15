@@ -2,6 +2,7 @@ import React from "react";
 import { signInWithPopup } from "firebase/auth";
 import { auth, provider } from "../firebase";
 import { Link, useNavigate } from "react-router-dom";
+import Login from "./Login";
 
 function Signup() {
 
@@ -27,13 +28,24 @@ function Signup() {
     <>
     {/* signup using gmail */}
     
-<div id="signup_modal" className="modal">
-  <div className="modal-box">
+    <div className="flex items-center justify-center mt-20">
+    
+  <div id="signup_modal" className="border-2 border-gray-300 rounded p-6 bg-white shadow">
+  
+  <div>
+     
     <form method="dialog">
       {/* Close button */}
-      <button className="btn btn-sm btn-circle btn-ghost absolute right-2 top-2">✕</button>
-    </form>
-
+  <div className="relative">
+  <button
+    onClick={() => navigate("/")}
+    className="absolute top-0 right-0 w-8 h-8 flex items-center justify-center rounded-full bg-gray-200 hover:bg-red-400 hover:text-white text-lg font-bold"
+  >
+    ×
+  </button>
+</div>
+    </form> 
+    
     <h3 className="font-bold text-lg">Sign Up</h3>
 
     <div className="mt-4 space-y-2">
@@ -76,24 +88,19 @@ function Signup() {
 
     <p className="mt-5 text-center">
       Already have an account?{" "}
-      <Link to="/" className="text-blue-500 hover:underline">
-        Login
-      </Link>
+        <Link to="/" className="text-blue-500 hover:underline">
+          Login
+        </Link>
+
+
     </p>
+  
   </div>
-</div>
-
+<div>
+  <h1 className="flex justify-center">or</h1>
     {/* Google Signup from firebase */}
-    <div>
-        <div className="min-h-screen flex items-center justify-center bg-gray-100">
 
-      <div className="bg-white p-8 rounded-xl shadow-lg w-96">
-
-        <h2 className="text-2xl font-bold text-center mb-6">
-          Sign Up
-        </h2>
-
-        <button
+<button
           onClick={handleGoogleLogin}
           className="w-full flex items-center justify-center gap-3 border p-3 rounded-lg hover:bg-gray-100"
         >
@@ -103,12 +110,12 @@ function Signup() {
             className="w-5 h-5"
           />
           Sign up with Google
-        </button>
+        </button></div>
 
-      </div>
+</div>
 
     </div>
-    </div>
+  
     </>
    
   );
