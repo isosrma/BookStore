@@ -8,7 +8,8 @@ function Cards({item}) {
   <figure className='overflow-hidden'>
     <img
       src= {item.image}
-      alt={item.name} />  
+      alt={item.name}
+        />  
   </figure>
   <div className="card-body">
     <h2 className="card-title ">
