@@ -3,8 +3,10 @@ import { useEffect } from 'react';
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import Login from './Login';
+import { useAuth } from '../context/AuthProvider';
 
 function Navbar() {
+
    const [theme, setTheme] = useState(() => localStorage.getItem("theme") || "light");
     useEffect(() => {
     const html = document.documentElement;
