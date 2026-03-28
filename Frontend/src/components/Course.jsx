@@ -1,7 +1,25 @@
 import React from 'react'
-import list from '../data/list.json'
 import { Link } from 'react-router-dom'
+import axios from 'axios'
+import { useState } from 'react'
+import { useEffect } from 'react';
 function Course() {
+  const [book, setBook] = useState([]);
+
+
+useEffect(() => {
+  const getBook = async () => {
+    try {
+      const res = await axios.get("http://localhost:4001/book");
+      console.log(res.data);
+      setBook(res.data);
+    } catch (error) {
+      console.error("Error fetching book:", error);
+    }
+  };
+
+  getBook();
+}, []);
   return (
    <>
   <div className='max-w-screen-2xl container mx-auto md:px-20 px-4'>
@@ -21,7 +39,7 @@ function Course() {
     <div className=' m-auto  auto-fit  grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6  '>
       
       {
-        list.map((item)=>(
+        book.map((item)=>(
           <div className="card  bg-base-auto w-full h-auto shadow-sm  mt-8 m-auto hover:shadow-red-700 duration-300 transition-shadow hover:scale-105 duration-300 transition-transform">
   <figure>
     <img

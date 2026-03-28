@@ -3,6 +3,8 @@ import { signInWithPopup } from "firebase/auth";
 import { auth, provider } from "../firebase";
 import { Link, useNavigate } from "react-router-dom";
 import { useForm } from "react-hook-form";
+import axios from "axios";
+import toast from "react-hot-toast";
 
 function Signup() {
   const {
@@ -11,7 +13,35 @@ function Signup() {
     formState: { errors },
   } = useForm();
 
-  const onSubmit = (data) => console.log(data);
+  const onSubmit = async (data) =>{
+    const userInfo = {
+      fullname: data.fullname,
+      email: data.email,
+      password: data.password,
+    };
+    await axios
+    .post("http://localhost:4001/user/signup", userInfo)
+    .then((res) => {
+      console.log(res.data);
+      if (res.data) {
+    localStorage.setItem("Users", JSON.stringify(res.data.user));
+    toast.success("Successfully signed up!");
+    navigate("/");
+}
+    
+    })
+    .catch((error) => {
+   if (error.response) {
+      console.log(error.response.data);
+      toast.error(`Signup failed: ${error.response.data.message}`);
+    } else {
+      console.error("Error during signup:", error);
+      toast.error("Signup failed. Please try again.");
+    }
+  }
+  );
+  }
+
 
   const navigate = useNavigate();
 
@@ -19,10 +49,11 @@ function Signup() {
     try {
       const result = await signInWithPopup(auth, provider);
       console.log(result.user);
-      alert(`Welcome ${result.user.displayName}`);
+      toast.success(`Welcome ${result.user.displayName}`);
       navigate("/#home");
     } catch (error) {
       console.log(error);
+      toast.error("Google login failed. Please try again.");
     }
   };
 
@@ -55,10 +86,10 @@ function Signup() {
                 type="text"
                 placeholder="Enter your full name"
                 className="w-80 px-3 py-2 outline-none border rounded-md"
-                {...register("fullName", { required: true })}
+                {...register("fullname", { required: true })}
               />
               <br />
-              {errors.fullName && (
+              {errors.fullname && (
                 <span className="text-sm text-red-500">This field is required</span>
               )}
             </div>
@@ -116,7 +147,7 @@ function Signup() {
 
             {/* ✅ Fix 4: Added type="button" to prevent accidental form submission */}
             <button
-              type="submit"
+              type="button"
               
               onClick={handleGoogleLogin}
               className="w-full flex items-center justify-center gap-3 border p-3 rounded-lg hover:bg-gray-100"

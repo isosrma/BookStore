@@ -2,8 +2,11 @@ import React from 'react'
 import Navbar from '../components/Navbar'
 import Footer from '../components/Footer'
 import Course from '../components/Course'
-import list from '../data/list.json'
+
+
+import { useEffect } from 'react'
 function Courses() {
+
   return (
    <>
    <Navbar />

@@ -5,6 +5,7 @@ import Contact from './components/Contact';
 import About from './components/About';
 import Courses from './courses/Courses';
 import Signup from './components/Signup';
+import {Toaster} from 'react-hot-toast'
 function App() {
   return (
     <>
@@ -25,6 +26,7 @@ function App() {
           <Route path="/signup"
          element={<Signup />} />
       </Routes>
+       <Toaster />
      </div>
   
   

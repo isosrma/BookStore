@@ -1,18 +1,29 @@
 {
-  "name": "bookstore",
+  "name": "backend",
   "version": "1.0.0",
-  "description": "mern project ",
+  "description": "",
   "main": "index.js",
-  "type" : "module",
+  "type": "module",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node index.js"
+    "dev": "node index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/isosrma/BookStore.git"
   },
   "author": "Ishwor Sharma",
   "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/isosrma/BookStore/issues"
+  },
+  "homepage": "https://github.com/isosrma/BookStore#readme",
   "dependencies": {
+    "bcryptjs": "^3.0.3",
+    "cors": "^2.8.6",
     "dotenv": "^17.3.1",
-    "express": "^5.2.1",
+    "mongodb": "^7.1.1",
+    "mongoose": "^9.3.1",
     "nodemon": "^3.1.14"
   }
 }
