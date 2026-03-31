@@ -4,8 +4,10 @@ import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import Login from './Login';
 import { useAuth } from '../context/AuthProvider';
+import Logout from './Logout';
 
 function Navbar() {
+  const [authUser, setAuthUser] = useAuth();
 
    const [theme, setTheme] = useState(() => localStorage.getItem("theme") || "light");
     useEffect(() => {
@@ -122,9 +124,11 @@ function Navbar() {
   </svg>
 </label>
 </div> 
+{
+  authUser ? <Logout /> : <a className=" text-black px-3 py-2 rounded-md hover:bg-base-300 transition hover:duration-200 cursor-pointer"  onClick={()=>document.getElementById('my_modal_3').showModal()}>Login</a>
+}
 
-    <a className=" text-black px-3 py-2 rounded-md hover:bg-base-300 transition hover:duration-200 cursor-pointer"  onClick={()=>document.getElementById('my_modal_3').showModal()}>Login</a>
-    <Login />
+   
   </div>
 </div>
     </>

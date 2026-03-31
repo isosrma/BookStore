@@ -25,6 +25,8 @@ const onSubmit = async (data) => {
     if (res.data) {
       localStorage.setItem("Users", JSON.stringify(res.data.user));
       toast.success("Successfully logged in!");
+       document.getElementById('my_modal_3').close();
+       window.location.reload();
       navigate("/");
     }
   } catch (error) {
