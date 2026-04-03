@@ -124,10 +124,12 @@ function Navbar() {
   </svg>
 </label>
 </div> 
-{
-  authUser ? <Logout /> : <a className=" text-black px-3 py-2 rounded-md hover:bg-base-300 transition hover:duration-200 cursor-pointer"  onClick={()=>document.getElementById('my_modal_3').showModal()}>Login</a>
-}
-
+  {authUser ? <Logout /> : (
+        <a onClick={() => document.getElementById('my_modal_3').showModal()} className="px-3 py-2 bg-pink-500 text-white rounded-md cursor-pointer">
+          Login
+        </a>
+      )}
+      <Login />
    
   </div>
 </div>
